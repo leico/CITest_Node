@@ -10,17 +10,17 @@ on :
 jobs :
   build : 
     runs-on : ubuntu-latest
-    env :
-      working-directory : . # https://github.community/t/use-working-directory-for-entire-job/16747/2
+      env :
+        working-directory : . # https://github.community/t/use-working-directory-for-entire-job/16747/2
 
     strategy :
       matrix : 
         node-version : [12.x]
 
     steps :
-      - uses : actions/checkout@v2
+      - uses : actions/checkout@v3
       - name : Use Node.js ${{ matrix.node-version }}
-      - uses : actions/setup-node@v1 # https://github.com/actions/setup-node
+        uses : actions/setup-node@v1 # https://github.com/actions/setup-node
         with : 
           node-version : ${{ matrix.node-version }}
       - run : npm install
