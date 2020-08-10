@@ -1,0 +1,30 @@
+# Node.js 用 CI
+name : Node.js CI
+
+on : 
+  pull_request : 
+    types :
+      - opened
+      - synchronize
+
+jobs :
+  build : 
+    runs-on : ubuntu-latest
+    env :
+      working-directory : . # https://github.community/t/use-working-directory-for-entire-job/16747/2
+
+    strategy :
+      matrix : 
+        node-version : [12.x]
+
+    steps :
+      - uses : actions/checkout@v2
+      - name : Use Node.js ${{ matrix.node-version }}
+      - uses : actions/setup-node@v1 # https://github.com/actions/setup-node
+        with : 
+          node-version : ${{ matrix.node-version }}
+      - run : npm install
+      - run : npm run build
+      - run : npm test
+        env : 
+          CI : true
