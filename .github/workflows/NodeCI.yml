@@ -10,8 +10,8 @@ on :
 jobs :
   build : 
     runs-on : ubuntu-latest
-      env :
-        working-directory : . # https://github.community/t/use-working-directory-for-entire-job/16747/2
+    env :
+      working-directory : . # https://github.community/t/use-working-directory-for-entire-job/16747/2
 
     strategy :
       matrix : 
