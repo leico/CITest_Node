@@ -1,0 +1,19 @@
+{
+  "name": "citest_node",
+  "version": "1.0.0",
+  "description": "CI test for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leico/CITest_Node.git"
+  },
+  "author": "leico",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leico/CITest_Node/issues"
+  },
+  "homepage": "https://github.com/leico/CITest_Node#readme"
+}
