@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/leico/CITest_Node/issues"
   },
-  "homepage": "https://github.com/leico/CITest_Node#readme"
+  "homepage": "https://github.com/leico/CITest_Node#readme",
+  "devDependencies": {
+    "jest": "^26.2.2"
+  }
 }
